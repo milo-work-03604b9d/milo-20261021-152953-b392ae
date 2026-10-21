@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <!-- Scanline Pattern -->
+    <pattern id="scanlines" x="0" y="0" width="100%" height="4" patternUnits="userSpaceOnUse">
+      <rect width="100%" height="1" fill="rgba(0,0,0,0.3)" />
+    </pattern>
+    <!-- Glow Effect -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode>
+          <feFlood flood-color="#ffb000" />
+        </feMergeNode>
+        <feMerge>
+          <feComposite in2="blur" />
+        </feMerge>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="#1a1a1a" />
+  
+  <!-- Scanline Overlay -->
+  <rect width="800" height="450" fill="url(#scanlines)" />
+  
+  <!-- Frame -->
+  <rect x="20" y="20" width="760" height="410" fill="none" stroke="#333" stroke-width="4" />
+  
+  <!-- Header -->
+  <text x="40" y="60" font-family="monospace" font-size="24" fill="#ffb000" filter="url(#glow)">SYSTEM_DIAGNOSTIC_V.4.02</text>
+  <line x1="40" y1="75" x2="300" y2="75" stroke="#ffb000" stroke-width="2" />
+  
+  <!-- Status Items -->
+  <!-- Oxygen -->
+  <text x="50" y="150" font-family="monospace" font-size="16" fill="#ffb000">O2_LEVEL: 88%</text>
+  <rect x="50" y="165" width="300" height="15" fill="#333" stroke="#ffb000" stroke-width="1" />
+  <rect x="50" y="165" width="264" height="15" fill="#ffb000" />
+  
+  <!-- Heat -->
+  <text x="50" y="230" font-family="monospace" font-size="16" fill="#00ff41">THERMAL: 420K</text>
+  <rect x="50" y="245" width="300" height="15" fill="#333" stroke="#00ff41" stroke-width="1" />
+  <rect x="50" y="245" width="210" height="15" fill="#00ff41" />
+  
+  <!-- Integrity -->
+  <text x="50" y="310" font-family="monospace" font-size="16" fill="#ffb000">INTEGRITY: 92%</text>
+  <rect x="50" y="325" width="300" height="15" fill="#333" stroke="#ffb000" stroke-width="1" />
+  <rect x="50" y="325" width="276" height="15" fill="#ffb000" />
+  
+  <!-- Warning Indicator -->
+  <circle cx="680" cy="150" r="10" fill="#ffb000" filter="url(#glow)" />
+  <text x="700" y="155" font-family="monospace" font-size="12" fill="#ffb000">WARN_ACTIVE</text>
+  
+  <!-- Decorative Elements -->
+  <rect x="600" y="300" width="150" height="100" fill="none" stroke="#333" stroke-width="1" />
+  <line x1="610" y1="310" x2="740" y2="310" stroke="#00ff41" stroke-width="1" />
+  <text x="610" y="340" font-family="monospace" font-size="10" fill="#00ff41">CORE_STABILITY</text>
+  <text x="610" y="360" font-family="monospace" font-size="10" fill="#00ff41">[STABLE]</text>
+
+</svg>
